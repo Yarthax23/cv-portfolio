@@ -6,6 +6,34 @@
 
 \section*{Portfolio – Proyectos Seleccionados}
 
+% ---------- Proyecto 0 ----------
+\noindent \textbf{Visualización Geoespacial — Subte de Buenos Aires (Ejercicio Urbanly)}
+\hfill \textit{2026}
+\begin{itemize}
+  \item Aplicación web que renderiza las líneas y estaciones del subte de Buenos Aires utilizando datasets públicos reales del GCBA.
+  \item Pipeline offline de transformación de datos para normalizar fuentes heterogéneas en CSV y GeoJSON.
+  \item Decisión explícita de no reconstruir topología debido a la falta de garantías de orden y conectividad en los datos de origen.
+  \item Enfoque de renderizado por segmentos: cada segmento de línea se preserva como un feature independiente para evitar conexiones falsas.
+  \item Énfasis en corrección, transparencia de supuestos y representación fiel de datos reales imperfectos.
+  \item \textbf{Repositorio:} \href{https://github.com/Yarthax23/urbanly-subte-map}{urbanly-subte-map}
+\end{itemize}
+
+\vspace{0.1cm}
+\figureblock
+  [0.8\textwidth]
+  {0.45\textheight}
+  {../urbanly-subte-map/assets/screenshots/map-overview.png}
+  {Vista general del mapa.
+  Líneas y estaciones renderizadas con MapLibre GL JS a partir de fuentes GeoJSON normalizadas.
+  Cada segmento corresponde directamente a la geometría original del dataset.}
+
+\vspace{0.15cm}
+\begin{itemize}
+  \item \textbf{Ejes de diseño:} separación del pipeline de datos, supuestos explícitos y corrección por sobre ajuste visual.
+\end{itemize}
+
+\newpage
+
 % ---------- Proyecto 1 ----------
 \textbf{Servidor de Chat Event-Driven en C} \hfill \textit{2025}
 \begin{itemize}

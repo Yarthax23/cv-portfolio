@@ -6,6 +6,35 @@
 
 \section*{Portfolio – Selected Projects}
 
+% ---------- Project 0 ----------
+\noindent \textbf{Geospatial Data Visualization — Buenos Aires Subway (Urbanly Exercise)}
+\hfill \textit{2026}
+\begin{itemize}
+  \item Web application rendering subway lines and stations of Buenos Aires using real public datasets from the GCBA.
+  \item Offline data transformation pipeline converting heterogeneous CSV and GeoJSON sources into normalized GeoJSON.
+  \item Deliberate decision to avoid topological reconstruction of line geometries due to missing ordering and connectivity guarantees in the source data.
+  \item Segment-based rendering approach: each line segment is preserved as an independent feature to avoid false connections.
+  \item Focus on correctness, transparency of assumptions, and faithful representation of imperfect real-world data.
+  \item \textbf{Repository:} \href{https://github.com/Yarthax23/urbanly-subte-map}{urbanly-subte-map}
+\end{itemize}
+
+\vspace{0.1cm}
+\figureblock
+  [0.8\textwidth]
+  {0.45\textheight}
+  {../urbanly-subte-map/assets/screenshots/map-overview.png}
+  {Subway map overview.
+  Lines and stations rendered using MapLibre GL JS from normalized GeoJSON sources.
+  Each segment corresponds directly to original dataset geometry.}
+
+\vspace{0.15cm}
+\begin{itemize}
+  \item \textbf{Key design focus:} Data pipeline separation, explicit assumptions, and correctness over visual overfitting.
+\end{itemize}
+
+\newpage
+
+
 % ---------- Project 1 ----------
 \textbf{Event-Driven Chat Server in C} \hfill \textit{2025}
 \begin{itemize}
