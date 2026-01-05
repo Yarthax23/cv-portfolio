@@ -1,0 +1,56 @@
+% =============================
+% Portfolio – Juan Diego Figari (ES)
+% Compile with: pdflatex -output-directory=../build -jobname=portfolio-es main.tex
+% =============================
+
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{graphicx}  % for screenshots/diagrams
+\usepackage{enumitem}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+\setlist[itemize]{noitemsep, topsep=2pt}
+
+% ---------- Header Macro ----------
+\newcommand{\portfolioheader}[4]{
+\begin{center}
+    {\Large \textbf{#1}}\\
+    #2\\
+    \href{mailto:#3}{#3} \;|\; \href{#4}{#4}
+\end{center}
+\vspace{0.5cm}
+}
+
+\newcommand{\figureblock}[4][0.8\textwidth]{%
+\begin{center}
+  \includegraphics[
+    width=#1,
+    height=#2,
+    keepaspectratio
+  ]{#3}
+
+  \vspace*{0.15cm}
+
+  \parbox{#1}{
+    \footnotesize
+    \textit{#4}
+  }
+\end{center}
+}
+
+\begin{document}
+
+\input{main_body.tex}
+
+\end{document}

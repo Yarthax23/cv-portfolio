@@ -1,0 +1,79 @@
+% =====================================================
+% ===================== ESPAÑOL =======================
+% =====================================================
+
+\portfolioheader{Juan Diego Figari}{Buenos Aires, Argentina}{juancito.diego@gmail.com}{https://github.com/Yarthax23}
+
+\section*{Portfolio – Proyectos Seleccionados}
+
+% ---------- Proyecto 1 ----------
+\textbf{Servidor de Chat Event-Driven en C} \hfill \textit{2025}
+\begin{itemize}
+  \item Servidor de chat de proceso único, event-driven, usando sockets UNIX y multiplexación con \texttt{select()}.
+  \item Diseño explícito de protocolo con separación estricta por capas: framing de entrada, gramática de comandos y ejecución.
+  \item Gestión manual del ciclo de vida de clientes mediante una tabla de tamaño fijo (single-threaded, sin fork()).
+  \item Énfasis en corrección, reproducibilidad y ownership explícito del estado del servidor por sobre concurrencia prematura.
+  \item \textbf{Repositorio:} 
+        \href{https://github.com/Yarthax23/unix-chat-server}{unix-chat-server}
+\end{itemize}
+
+\vspace{0.1cm}
+\figureblock
+  [0.8\textwidth]
+  {0.45\textheight}
+  {../chat-server/assets/diagrams/dataFlow.pdf}
+  {Flujo de datos y separación de responsabilidades.
+  Pipeline estricto desde \texttt{recv()} hasta \texttt{send()}, con framing, gramática e intención claramente separadas. La gramática valida entradas y nunca realiza I/O ni muta estado.}
+
+\vspace{0.1cm}
+\figureblock
+  [0.7\textwidth]
+  {0.4\textheight}
+  {../chat-server/assets/screenshots/server-terminal.png}
+  {Servidor – ejecución del protocolo.
+  Loop event-driven con \texttt{select()}, procesamiento de flujo de bytes, emisión de eventos JOIN/LEAVE/QUIT y broadcast de mensajes a los clientes de una sala.}
+
+
+\vspace{0.1cm}
+\figureblock
+  [0.7\textwidth]
+  {0.35\textheight}
+  {../chat-server/assets/screenshots/client-toad.png}
+  {Cliente espectador (Toad).
+  Vista del protocolo desde un cliente pasivo, observando eventos de servidor y mensajes de usuarios, incluyendo salida y reingreso de un cliente con asignación tardía de nickname.}
+
+\vspace{0.2cm}
+\begin{itemize}
+  \item \textbf{Ejes de diseño:} sownership del estado del servidor, semántica de broadcasts y separación entre gramática y ejecución.
+\end{itemize}
+
+
+\newpage
+% ---------- Proyecto 2 ----------
+\noindent \textbf{Servidor Go con PostgreSQL} \hfill \textit{2025}
+\begin{itemize}
+  \item Servidor tipo REST implementado en Go con persistencia en PostgreSQL.
+  \item Implementación de endpoints CRUD básicos e interacción con la base de datos.
+  \item Proyecto inicial de aprendizaje en Go, enfocado en fundamentos del lenguaje y estructura de backends.
+  \item Anterior a la adopción de convenciones de commits estructurados y testing formal.
+  \item \textbf{Repositorio:} \href{https://github.com/Yarthax23/go-todo-api}{go-todo-api}
+  % \item Screenshots / diagramas (opcional): 
+          % \includegraphics[width=0.8\textwidth]{screenshots/go-tareas.png}
+\end{itemize}
+
+% ---------- Proyecto 3 ----------
+\noindent \textbf{Proyecto de Programación Funcional en Haskell} \hfill \textit{2025}
+\begin{itemize}
+  \item Trabajo universitario enfocado en programación funcional utilizando Haskell.
+  \item Implementación de algoritmos y transformaciones de datos mediante funciones puras
+        y garantías fuertes de tipos.
+  \item Enfoque en corrección, inmutabilidad y razonamiento explícito sobre el comportamiento.
+  \item Primer contacto con commits estructurados y prácticas de desarrollo disciplinadas.
+  \item \textbf{Repositorio:} \href{https://github.com/juop12/Exactas-PLP-cNil/tree/main/tp1-programacion-funcional}{TP Haskell (PLP)}
+\end{itemize}
+
+\section*{Cómo encaro problemas de sistemas}
+Priorizo la corrección y el ownership explícito del estado antes que el rendimiento o la escalabilidad
+Prefiero diseños donde el flujo de control y los efectos laterales sean visibles, depurables y fáciles
+de razonar. Al construir sistemas, apunto a límites claros, comportamiento determinista y complejidad
+incremental, postergando concurrencia y optimización hasta que la semántica esté bien definida.

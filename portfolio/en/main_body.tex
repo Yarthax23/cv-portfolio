@@ -1,0 +1,78 @@
+% =====================================================
+% ===================== ENGLISH =======================
+% =====================================================
+
+\portfolioheader{Juan Diego Figari}{Buenos Aires, Argentina}{juancito.diego@gmail.com}{https://github.com/Yarthax23}
+
+\section*{Portfolio – Selected Projects}
+
+% ---------- Project 1 ----------
+\textbf{Event-Driven Chat Server in C} \hfill \textit{2025}
+\begin{itemize}
+  \item Single-process, event-driven chat server using UNIX domain stream sockets and \texttt{select()}.
+  \item Explicit protocol design with strict layered separation: input framing, command grammar, and execution.
+  \item Manual client lifecycle management via a fixed-size client table (single-threaded, no \texttt{fork()}).
+  \item Emphasis on correctness, reproducibility, and explicit ownership of server state over premature concurrency.
+  \item \textbf{Repository:} \href{https://github.com/Yarthax23/unix-chat-server}{unix-chat-server}
+\end{itemize}
+  
+\vspace{0.1cm}
+\figureblock
+  [0.8\textwidth]
+  {0.45\textheight}
+  {../chat-server/assets/diagrams/dataFlow.pdf}
+  {Data flow and separation of responsibilities.
+  Strict pipeline from \texttt{recv()} to \texttt{send()}, with clear separation between framing, grammar, and execution. The grammar validates input and never performs I/O or state mutation.}
+
+\vspace{0.1cm}
+\figureblock
+  [0.7\textwidth]
+  {0.4\textheight}
+  {../chat-server/assets/screenshots/server-terminal.png}
+  {Server – protocol execution.
+  Event-driven \texttt{select()} loop processing a byte stream, emitting JOIN/LEAVE/QUIT events and broadcasting messages to clients in the corresponding room.}
+
+\vspace{0.1cm}
+\figureblock
+  [0.7\textwidth]
+  {0.35\textheight}
+  {../chat-server/assets/screenshots/client-toad.png}
+  {Spectator client (Toad).
+  Protocol view from a passive client, observing server events and user messages, including a client leaving and rejoining with \mbox{late nickname assignment.}}
+
+\vspace{0.2cm}
+\begin{itemize}
+  \item \textbf{Key design focus:} Ownership of server state, broadcast semantics, and grammar vs execution separation.
+\end{itemize}
+
+
+\newpage
+% ---------- Project 2 ----------
+\noindent \textbf{Go To-Do Server with PostgreSQL} \hfill \textit{2025}
+\begin{itemize}
+  \item REST-style API server written in Go with PostgreSQL persistence.
+  \item Implemented basic CRUD endpoints and database interactions.
+  \item Early Go learning project focused on understanding language fundamentals, standard library usage, and backend structure.
+  \item Project predates adoption of structured commit conventions and formal testing.
+  \item \textbf{Repository:} \href{https://github.com/Yarthax23/go-todo-api}{go-todo-api}
+  % \item Screenshots / diagrams (optional): 
+          % \includegraphics[width=0.8\textwidth]{screenshots/go-tareas.png}
+\end{itemize}
+
+% ---------- Project 3 ----------
+\noindent \textbf{Functional Programming Project in Haskell} \hfill \textit{2025}
+\begin{itemize}
+  \item University project focused on functional programming using Haskell.
+  \item Implemented core algorithms and data transformations using pure functions
+        and strong type guarantees.
+  \item Emphasis on correctness, immutability, and explicit reasoning about program behavior.
+  \item Early exposure to structured commits and disciplined development practices.
+  \item \textbf{Repository:} \href{https://github.com/juop12/Exactas-PLP-cNil/tree/main/tp1-programacion-funcional}{Haskell TP (PLP)}
+\end{itemize}
+
+\section*{How I Approach Systems Problems}
+I prioritize correctness and explicit ownership of state before performance or scalability.
+I prefer designs where control flow and side effects are visible, debuggable, and easy to
+reason about. When building systems, I focus on clear boundaries, deterministic behavior,
+and incremental complexity, delaying concurrency and optimization until semantics are
+fully understood.

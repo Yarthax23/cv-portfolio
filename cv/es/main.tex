@@ -1,0 +1,40 @@
+% =============================
+% CV – Juan Figari (ES)
+% Compile with: pdflatex -output-directory=../build -jobname=cv-es main.tex
+
+% =============================
+
+\documentclass[11pt]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{multicol}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue
+}
+
+\setlist[itemize]{noitemsep, topsep=2pt}%, leftmargin=*}
+
+% ---------- Header Macro ----------
+\newcommand{\cvheader}[4]{
+\begin{center}
+    {\Large \textbf{#1}}\\
+    #2\\
+    \href{mailto:#3}{#3} \;|\; \href{#4}{#4}
+\end{center}
+}
+
+% =====================================================
+\begin{document}
+
+\input{main_body.tex}
+
+\end{document}
