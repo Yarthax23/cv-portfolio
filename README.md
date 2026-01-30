@@ -8,6 +8,16 @@ It is structured as a set of reproducible documents rather than a static artifac
 
 ---
 
+## Current Role
+
+**Junior Engineer @ Urbanly** (Jan 2026–present)
+
+Working on geospatial simulation systems for urban planning — agent-based modeling,
+accessibility calculations, and spatial data infrastructure. Tech stack includes
+C++ services (Carpincho, Bigfoot), TypeScript/React (CityCompass), and PostgreSQL/PostGIS.
+
+---
+
 ## Structure
 
 ```
@@ -27,7 +37,7 @@ portfolio/ LaTeX sources and project write-ups
 
 ---
 
-## Highlighted Project
+## Highlighted Projects
 
 ### Event-Driven Chat Server (C)
 
@@ -39,11 +49,15 @@ The portfolio focuses on:
 - Protocol framing vs grammar vs execution
 - Deterministic, debuggable behavior
 
-📂 Design documents:
-- `portfolio/chat-server/`
+📂 Design documents: `portfolio/chat-server/`
+📦 Source: https://github.com/Yarthax23/unix-chat-server
 
-📦 Source repository:
-https://github.com/Yarthax23/unix-chat-server
+### Urbanly Subway Map (TypeScript)
+
+Interactive subway network visualization built during Urbanly's hiring process.
+Demonstrates frontend architecture decisions, state management, and accessible UI design.
+
+📂 Design documents: `portfolio/urbanly-subte-map/`
 
 ---
 
