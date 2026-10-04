@@ -10,7 +10,7 @@ It is structured as a set of reproducible documents rather than a static artifac
 
 ## Current Role
 
-**Junior Engineer @ Urbanly** (Jan 2026–present)
+**Junior Engineer @ Urbanly** (Jan 2026–Oct 2026)
 
 Working on geospatial simulation systems for urban planning — agent-based modeling,
 accessibility calculations, and spatial data infrastructure. Tech stack includes
